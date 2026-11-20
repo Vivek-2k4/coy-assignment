@@ -4,6 +4,11 @@ A swipe-based profile discovery and matching experience inspired by Coy, built w
 
 Coy Discover allows users to explore profiles, express interest through likes or passes, and discover mutual connections through an interactive matching experience.
 
+🌐 **Live Demo:** [https://coy-connect.vercel.app](https://coy-connect.vercel.app)  
+💻 **GitHub Repository:** [https://github.com/Vivek-2k4/coy-assignment](https://github.com/Vivek-2k4/coy-assignment)
+
+---
+
 ## ✨ Features
 
 - **Profile Discovery:** Explore 30 mock profiles with details including name, age, bio, city, college, and interests.
@@ -32,6 +37,10 @@ Coy Discover allows users to explore profiles, express interest through likes or
 
 **Database**
 - Supabase (PostgreSQL)
+
+**Deployment**
+- Vercel
+- GitHub
 
 ## 📁 Project Structure
 
@@ -72,8 +81,8 @@ coy-discover/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd coy-discover
+git clone https://github.com/Vivek-2k4/coy-assignment.git
+cd coy-assignment
 ```
 
 ### 2. Install dependencies
@@ -91,19 +100,26 @@ SUPABASE_URL=your_supabase_project_url
 SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 ```
 
-Replace the placeholder values with your Supabase project credentials.
+Replace the placeholder values with your own Supabase project credentials.
 
 **Important:** Keep your service-role key private. Never commit `.env.local` or expose this key in frontend code.
 
 ### 4. Configure Supabase
 
-Create a Supabase project and configure the PostgreSQL database with the following tables:
+Create a Supabase project and configure the PostgreSQL database with the following tables in the `public` schema:
 
 - `profiles`
 - `swipes`
 - `matches`
 
-The database should contain the demo user, mock profiles, and initial incoming likes required for testing the matching functionality.
+The database must contain:
+- A predefined demo user.
+- 30 mock user profiles.
+- Initial incoming likes for the demo user.
+
+Enable Row Level Security and configure the appropriate server-side database access.
+
+The demo data must be seeded before running the application.
 
 ### 5. Run the development server
 
@@ -113,9 +129,7 @@ npm run dev
 
 Open your browser and visit:
 
-```text
 http://localhost:3000
-```
 
 ## 🔌 API Endpoints
 
@@ -136,7 +150,7 @@ http://localhost:3000
 }
 ```
 
-**Possible response:**
+**Example successful match response:**
 
 ```json
 {
@@ -162,6 +176,54 @@ The application follows a mutual-interest matching system:
 
 One-sided likes are never displayed as mutual matches.
 
+## 🧪 Demo Account & Testing Guide
+
+The live application comes with a predefined, pre-authenticated demo account. **No signup or login is required.**
+
+### Demo User ID
+
+```text
+00000000-0000-0000-0000-000000000001
+```
+
+### Pre-seeded Incoming Likes
+
+The following eight mock profiles have already liked the demo user:
+
+| No. | Name | Handle |
+|---|---|---|
+| 1 | Aanya Sharma | `aanya_sharma` |
+| 2 | Arjun Kapoor | `arjun_kapoor` |
+| 3 | Sana Khan | `sana_khan` |
+| 4 | Vivaan Bansal | `vivaan_bansal` |
+| 5 | Kavya Shah | `kavya_shah` |
+| 6 | Zoya Ali | `zoya_ali` |
+| 7 | Diya Bhatia | `diya_bhatia` |
+| 8 | Kiara Menon | `kiara_menon` |
+
+### How to Test the Matching Experience
+
+1. Open the [Coy Discover live demo](https://coy-connect.vercel.app/).
+2. Navigate to the Discover section.
+3. Browse the available profiles.
+4. Like any of the eight profiles listed above.
+5. Since that profile has already liked the demo user, a mutual match should be created.
+6. Observe the animated **"It's a Match!"** celebration.
+7. Navigate to the Matches section to view the matched profile.
+8. Refresh the application to verify that the match persists.
+
+### Important Note About Demo Data
+
+The application uses a single shared demo account and a shared Supabase database, as permitted by the assignment's single-user demo assumption.
+
+Consequently:
+- Swipes and matches are persisted across visitors and devices.
+- A profile that has already been swiped on will not reappear in the feed.
+- Incoming likes are stored independently of the demo user's outgoing swipes.
+- Database changes are reflected for all visitors.
+
+For the best initial testing experience, use the pre-seeded incoming likes listed above.
+
 ## 🧪 Production Build
 
 To verify the production build:
@@ -169,6 +231,8 @@ To verify the production build:
 ```bash
 npm run build
 ```
+
+The application is deployed on Vercel and uses Supabase as its persistent database.
 
 ## 🔒 Security
 
@@ -181,4 +245,12 @@ npm run build
 
 **Vivek Chandra Arya**
 
-vivek.arya.works@gmail.com
+B.Tech in Electronics and Communication Engineering (AI & ML)  
+Netaji Subhas University of Technology (NSUT), 2026
+
+📧 Email: vivek.arya.works@gmail.com  
+🐙 GitHub: [Vivek-2k4](https://github.com/Vivek-2k4)
+
+---
+
+Built with ❤️ as part of the Coy assignment.
