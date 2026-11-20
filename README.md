@@ -176,6 +176,23 @@ The application follows a mutual-interest matching system:
 
 One-sided likes are never displayed as mutual matches.
 
+## 📸 Screenshots
+
+### Discover Page
+Explore profiles, view their details, and express interest through intuitive swipe interactions.
+
+![Coy Discover Page](./public/screenshots/discover.png)
+
+### It's a Match!
+A celebration screen appears when two users mutually express interest in each other.
+
+![Match Celebration](./public/screenshots/match.png)
+
+### Matches
+View profiles with whom a mutual connection has been established.
+
+![Matches Page](./public/screenshots/matches.png)
+
 ## 🧪 Demo Account & Testing Guide
 
 The live application comes with a predefined, pre-authenticated demo account. **No signup or login is required.**
@@ -250,6 +267,7 @@ Netaji Subhas University of Technology (NSUT), 2026
 
 📧 Email: vivek.arya.works@gmail.com  
 🐙 GitHub: [Vivek-2k4](https://github.com/Vivek-2k4)
+
 
 ---
 
